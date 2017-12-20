@@ -1,0 +1,61 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block custom_script %}
+    {% endblock %}
+    <title>GG | {% block title %}{% endblock %}</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">gopikrishnan.com</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="/stasks">menu</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        apps <span class="caret"></span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/family">family network</a></li>
+                            <li><a href="#">match calculator</a></li>
+                        </ul>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+<footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                    <li><a href="mailto:gopikrishnan.ganesan@gmail.com">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
