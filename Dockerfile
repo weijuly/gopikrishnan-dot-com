@@ -11,6 +11,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 COPY ./website /home/docker/website
 
+
 RUN pip3 install uwsgi
 RUN pip3 install -r /home/docker/website/requirements.txt
 
